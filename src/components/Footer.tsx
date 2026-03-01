@@ -18,14 +18,14 @@ export default function Footer() {
           <span className="mx-1">•</span>
           <span>Built for privacy</span>
         </div>
-          <a
-            className="text-xs text-muted-foreground flex items-center gap-1"
-            href="https://www.flaticon.com/free-icons/anonymous"
-            title="anonymous icons"
-          >
-            Anonymous icons created by pbig - Flaticon
-            <LucideLink className="h-2 w-2" />
-          </a>
+        <a
+          className="text-xs text-muted-foreground flex items-center gap-1"
+          href="https://www.flaticon.com/free-icons/anonymous"
+          title="anonymous icons"
+        >
+          Anonymous icons created by pbig - Flaticon
+          <LucideLink className="h-2 w-2" />
+        </a>
       </div>
     </footer>
   )
