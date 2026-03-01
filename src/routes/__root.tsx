@@ -3,6 +3,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 
@@ -14,9 +15,12 @@ interface MyRouterContext {
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
   component: () => (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <Outlet />
+      <main className="grow">
+        <Outlet />
+      </main>
+      <Footer />
       <TanStackDevtools
         config={{
           position: 'bottom-right',
@@ -29,6 +33,6 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
           TanStackQueryDevtools,
         ]}
       />
-    </>
+    </div>
   ),
 })
