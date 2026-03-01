@@ -1,4 +1,4 @@
-import { Outlet, createRootRouteWithContext } from '@tanstack/react-router'
+import { Outlet, createRootRouteWithContext, useLocation } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
@@ -14,13 +14,20 @@ interface MyRouterContext {
 }
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
-  component: () => (
-    <div className="flex flex-col min-h-screen">
+  component: RootComponent,
+})
+
+function RootComponent() {
+  const location = useLocation()
+  const isHomePage = location.pathname === '/'
+
+  return (
+    <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="grow">
+      <main className="flex-1 flex flex-col">
         <Outlet />
       </main>
-      <Footer />
+      {isHomePage && <Footer />}
       <TanStackDevtools
         config={{
           position: 'bottom-right',
@@ -34,5 +41,5 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         ]}
       />
     </div>
-  ),
-})
+  )
+}

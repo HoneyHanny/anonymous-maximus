@@ -105,8 +105,8 @@ function App() {
   }, [])
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] px-6 py-12 bg-background overflow-hidden">
-      <div className="relative w-full max-w-md space-y-8 z-10">
+    <div className="relative flex-1 flex flex-col items-center justify-center px-6 py-8 bg-background">
+      <div className="relative w-full max-w-md space-y-6 z-10">
         <div className="text-center space-y-3">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
             Anonymous Maximus
